@@ -37,7 +37,7 @@ services:
       timeout: 10s
       retries: 5
     volumes:
-      - files:/mnt/data
+      - /docker/owncloud/files:/mnt/data
 
   mariadb:
     image: mariadb:10.6 # minimum required ownCloud version is 10.9
@@ -55,7 +55,7 @@ services:
       timeout: 5s
       retries: 5
     volumes:
-      - mysql:/var/lib/mysql
+      - /docker/owncloud-mysql:/var/lib/mysql
 
   redis:
     image: redis:6
