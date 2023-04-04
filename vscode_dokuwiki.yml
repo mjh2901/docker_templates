@@ -1,0 +1,25 @@
+---
+# Title: vscode
+# Description: Visual Studio Code Server installer based on linuxserver.io image
+# Icon Url: https://raw.githubusercontent.com/mjh2901/docker_templates/master/vscode_logo.png
+version: "2.1"
+services:
+  code-server:
+    image: lscr.io/linuxserver/code-server:latest
+    container_name: code-server
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=America/Los_Angeles
+      - PASSWORD=mac0file #optional
+      - HASHED_PASSWORD= #optional
+      - SUDO_PASSWORD=password #optional
+      - SUDO_PASSWORD_HASH= #optional
+      - PROXY_DOMAIN=code-server.my.domain #optional
+      - DEFAULT_WORKSPACE=/dokuwiki #optional
+    volumes:
+      - /docker/vscode:/config
+      - /docker/dokuwiki/dokuwiki/data/pages:/dokuwiki
+    ports:
+      - 8432:8443
+    restart: unless-stopped
