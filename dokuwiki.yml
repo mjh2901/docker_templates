@@ -1,4 +1,7 @@
 ---
+# Title: dokuwiki
+# Description: Dokuwiki installer based on linuxserver.io image
+# Icon Url: https://raw.githubusercontent.com/mjh2901/docker_templates/master/dokuwiki_logo.png
 version: "2.1"
 services:
   dokuwiki:
