@@ -14,6 +14,6 @@ services:
     volumes:
       - /docker/dokuwiki:/config
     ports:
-      - 80:80
-      - 443:443 #optional
+      #- 8081:80
+      - 8431:443 #optional
     restart: unless-stopped
