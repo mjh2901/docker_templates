@@ -3,3 +3,17 @@ sudo docker run -d --name mariadb \
 -e MYSQL_ROOT_PASSWORD=password \
 -v /docker/mariadb:/var/lib/mysql \
 mariadb
+
+
+version: '3.1'
+services:
+  db:
+    image: mariadb
+    restart: always
+    environment:
+      - MARIADB_ROOT_PASSWORD: example
+    network_mode: bind  
+    ports:
+        - 3306:3306
+    volumes:
+      - /docker/mariadb:/var/lib/mysql
